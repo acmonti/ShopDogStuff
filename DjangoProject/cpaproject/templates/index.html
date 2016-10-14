@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Shop Dog Stuff</title>
+
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap1.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap2.css' %}" rel="stylesheet">
+
+        <!--theme-style-->
+        <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" media="all">
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery.min1.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min2.js' %}"></script>
+
+        <!--//theme-style-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <!--fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+        <!--//fonts-->
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        				<script type="text/javascript">
+        					jQuery(document).ready(function($) {
+        						$(".scroll").click(function(event){
+    	    						event.preventDefault();
+    		    					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    			    			});
+    				    	});
+    					</script>
+        <script>$(document).ready(function(c) {
+        	$('.alert-close1').on('click', function(c){
+       		$('.message1').fadeOut('slow', function(c){
+      		$('.message1').remove();
+        		});
+    	    });
+        });
+        </script>
+        <script>$(document).ready(function(c) {
+        	$('.alert-close').on('click', function(c){
+        		$('.message').fadeOut('slow', function(c){
+        	  		$('.message').remove();
+        		});
+        	});
+        });
+        </script>
+    </head>
+    <body>
+        <!-- banner -->
+        <div class="banner-section">
+			<div class="container">
+				<div class="banner-grids">
+					<div class="col-md-6 banner-grid">
+						<h2 align="center">WELCOME TO SHOP DOG STUFF</h2>
+                        <br>
+						<p align="center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <a href="/shop/" class="button"><h3 align="center"><b>SHOP NOW</b></h3></a>
+					</div>
+					<div class="col-md-6 banner-grid1">
+						<img src="{% static 'images\dog9.png' %}" class="img-responsive" alt=""/>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+        <!-- //banner -->
+    </body>
+</html>

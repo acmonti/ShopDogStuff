@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Dog Stuff - {{ instance.name }}</title>
+
+    <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap1.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap2.css' %}" rel="stylesheet">
+
+        <!--theme-style-->
+        <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" media="all">
+
+        <link href="{% static 'css/owl.carousel2.css' %}" rel="stylesheet">
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery.min1.js' %}"></script>
+        <script src="{% static 'js/jquery.min2.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min2.js' %}"></script>
+
+        <!-- the jScrollPane script -->
+        <script type="text/javascript" src="{% static 'js/jquery.jscrollpane.min2.js' %}"></script>
+		    <script type="text/javascript" id="sourcecode">
+			    $(function()
+			    {
+    				$('.scroll-pane').jScrollPane();
+    			});
+    		</script>
+
+        <!--//theme-style-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <!--fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+        <!--//fonts-->
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        				<script type="text/javascript">
+        					jQuery(document).ready(function($) {
+        						$(".scroll").click(function(event){
+    	    						event.preventDefault();
+    		    					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    			    			});
+    				    	});
+    					</script>
+        <script>$(document).ready(function(c) {
+        	$('.alert-close1').on('click', function(c){
+       		$('.message1').fadeOut('slow', function(c){
+      		$('.message1').remove();
+        		});
+    	    });
+        });
+        </script>
+        <script>$(document).ready(function(c) {
+        	$('.alert-close').on('click', function(c){
+        		$('.message').fadeOut('slow', function(c){
+        	  		$('.message').remove();
+        		});
+        	});
+        });
+        </script>
+</head>
+<body>
+    <div class="container">
+	        <div class="header">
+    		    <div class="header-top">
+    			    <div class="logo">
+    				    <a href="{% url 'index' %}">
+                            <img src="{% static 'images\logo.png' %}" alt="">
+                        </a>
+    			    </div>
+                    <div class="top-right">
+				            <ul>
+					            <li>
+                                    <div class="cart box_1">
+                                        <a href="checkout.html">
+    								        <span class="simpleCart_total"> PHP 0.00 </span>
+        							    </a>
+        							    <p>
+                                            <a href="javascript:;" class="simpleCart_empty">(<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) Empty cart</a>
+                                        </p>
+        							    <div class="clearfix"> </div>
+                                    </div>
+                                </li>
+				            </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+    {% if instance.image %}
+        <img src="{{ instance.image.url }}" class="img-responsive">
+    {% endif %}
+    {{ instance.name }}<br>
+    <br>
+    {{ instance.description }}<br>
+    PHP {{ instance.price }}<br>
+    {{ instance.stocks }} stocks left
+</body>
+</html>

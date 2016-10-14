@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Dog Stuff - Clothes</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+        <!-- Bootstrap -->
+        <link href="{% static 'css/bootstrap1.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap2.css' %}" rel="stylesheet">
+
+        <!--theme-style-->
+        <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" media="all">
+
+        <link href="{% static 'css/owl.carousel2.css' %}" rel="stylesheet">
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="{% static 'js/jquery.min1.js' %}"></script>
+        <script src="{% static 'js/jquery.min2.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min2.js' %}"></script>
+
+        <!-- the jScrollPane script -->
+        <script type="text/javascript" src="{% static 'js/jquery.jscrollpane.min2.js' %}"></script>
+		    <script type="text/javascript" id="sourcecode">
+			    $(function()
+			    {
+    				$('.scroll-pane').jScrollPane();
+    			});
+    		</script>
+
+        <!--//theme-style-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <!--fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+        <!--//fonts-->
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        				<script type="text/javascript">
+        					jQuery(document).ready(function($) {
+        						$(".scroll").click(function(event){
+    	    						event.preventDefault();
+    		    					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    			    			});
+    				    	});
+    					</script>
+        <script>$(document).ready(function(c) {
+        	$('.alert-close1').on('click', function(c){
+       		$('.message1').fadeOut('slow', function(c){
+      		$('.message1').remove();
+        		});
+    	    });
+        });
+        </script>
+        <script>$(document).ready(function(c) {
+        	$('.alert-close').on('click', function(c){
+        		$('.message').fadeOut('slow', function(c){
+        	  		$('.message').remove();
+        		});
+        	});
+        });
+        </script>
+</head>
+<body>
+    <div class="container">
+	        <div class="header">
+    		    <div class="header-top">
+    			    <div class="logo">
+    				    <a href="{% url 'index' %}">
+                            <img src="{% static 'images\logo.png' %}" alt="">
+                        </a>
+    			    </div>
+                    <div class="top-right">
+				            <ul>
+					            <li>
+                                    <div class="cart box_1">
+                                        <a href="checkout.html">
+    								        <span class="simpleCart_total"> PHP 0.00 </span>
+        							    </a>
+        							    <p>
+                                            <a href="javascript:;" class="simpleCart_empty">(<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) Empty cart</a>
+                                        </p>
+        							    <div class="clearfix"> </div>
+                                    </div>
+                                </li>
+				            </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+    <!-- categories nav bar -->
+    <div class="header-bottom">
+        <div class="top-nav">
+            <span class="menu"> </span>
+            <ul>
+                <br>
+                <li><font color="white">  blankblankblankblankblankblankblankblankblankblankblank  </font></li>
+                <li class="active" ><a href="/clothes/"> CLOTHES </a> </li>
+                <li><font color="white">  blankblankblank  </font></li>
+                <li><a href="men.html" data-hover="ACCESSORIES"> ACCESSORIES </a></li>
+                <li><font color="white">  blankblankblank  </font></li>
+                <li><a href="men.html" data-hover="SHOES"> SHOES </a></li>
+            </ul>
+
+            <script>
+				$("span.menu").click(function(){
+					$(".top-nav ul").slideToggle(500, function(){
+					});					});
+			</script>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- //categories nav bar -->
+
+    <!-- products -->
+    <div class="content">
+	    <div class="product-model">
+	        <div class="container">
+                <!-- list of products -->
+                <div class="col-md-12 product-model-sec">
+					{% for product in product_list %}
+                        <div class="product-grid">
+						    <div class="more-product"><span> </span></div>
+                            <a href="/product/{{ product.id }}">
+                            <div class="product-img b-link-stripe b-animate-go  thickbox">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="img-responsive" alt="">
+                                {% endif %}
+                                <div class= "b-wrapper">
+                                    <h4 class="b-animate b-from-left  b-delay03">
+                                        <button> VIEW </button>
+                                    </h4>
+                                </div>
+                            </div>
+                            </a>
+                            <div class="product-info simpleCart_shelfItem">
+                                <div class="product-info-cust prt_name">
+                                    <font color="black"><b> {{ product.name }} </b></font>
+                                    <span class="item_price"><font color="gray">PHP {{ product.price }} </font></span>
+                                    <!-- <input type="text" class="item_quantity" value="1" /> -->
+                                    <input type="button" class="item_add items" value="+">
+                                    <div class="clearfix"> </div>
+                                </div>
+                            </div>
+						</div>
+                    {% endfor %}
+                    <!-- ////////////////////////////////////////////////////////////////////////////// -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //products -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
